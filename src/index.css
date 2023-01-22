@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App-Cipher{
+  max-width: 1080px;
+  margin:0 auto;
+  height: calc(100vh - 100px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em;
+}
+
+@media (min-width:720px){
+  .App-Cipher{
+    flex-direction: row;
+  }
+}
+
+
+input{
+  border: none;
+  outline: none;
+  padding: .2em;
+}

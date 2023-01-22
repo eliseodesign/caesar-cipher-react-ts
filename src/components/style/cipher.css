@@ -1,0 +1,55 @@
+*{
+  box-sizing: border-box;
+}
+.cipher{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70% 25%;
+  grid-template-rows: 1fr 60px 60px;
+  grid-template-areas: 
+  "buttons buttons"
+  "input1 input2 "
+  "resul resul";
+
+  margin-top: 1em;
+  background: transparent;
+  border: 1px solid #fff;
+  overflow: hidden;
+  color: #fff;
+  gap:1em;
+  padding: .5em;
+}
+
+.container-buttons{
+  grid-area: buttons;
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+}
+.input input{
+  background: transparent;
+  background: rgba(255, 255, 255, 0.363);
+
+}
+.input label{
+  font-size: .7em;
+  text-transform:uppercase;
+}
+.input label, .resul{
+  padding-left: .5em;
+}
+.i1{
+  grid-area:input1;
+
+}
+.i2{
+  grid-area:input2;
+}
+
+
+.resul{
+  grid-area: resul;
+}
