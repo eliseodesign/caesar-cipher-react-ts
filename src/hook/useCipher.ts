@@ -9,7 +9,8 @@
 
 function useCipher(str:string, rotation:number, encrypt:boolean = true):string{
 
-  if(typeof str !== "string" || !Number.isInteger(rotation) || rotation <= 0 || typeof encrypt !== "boolean"){
+  if(rotation ===0) return ""
+  if(typeof str !== "string" || !Number.isInteger(rotation) || rotation < 0 || typeof encrypt !== "boolean"){
   throw new TypeError("Argumentos invalidos")
   }
 

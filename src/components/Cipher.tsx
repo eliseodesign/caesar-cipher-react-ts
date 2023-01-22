@@ -15,6 +15,10 @@ const Cipher = () => {
     setValue(useCipher(input,move,cipher))
   }, [input, move, cipher])
   
+  function changeMove(e:any){
+    
+    if((typeof Number(e.target.value)) === "number" ) toSetMove?.(Number(e.target.value))
+  }
 
   return ( 
     <div className="cipher">
@@ -32,7 +36,8 @@ const Cipher = () => {
       <div className="input i2">
         <label>Movimiento:</label>
         <input 
-          onChange={(e)=> toSetMove?.(Number(e.target.value))}
+          min="1"
+          onChange={(e)=> changeMove(e)}
           value={move}
           type="number" /> 
       </div>

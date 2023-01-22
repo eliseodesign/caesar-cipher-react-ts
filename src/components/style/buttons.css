@@ -6,7 +6,13 @@
   color: #fff;
 }
 
-.active{
-  background: rgba(0, 0, 0, 0.473);
+.container-buttons button{
+  color: #aaa;
+}
+
+.container-buttons .active{
+  color: #fff;
+  transition: background .2s ease-in;
+  background: rgba(0, 0, 0, 0.295);
 }
 
