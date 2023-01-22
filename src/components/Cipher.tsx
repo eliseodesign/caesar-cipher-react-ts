@@ -13,7 +13,7 @@ const Cipher = () => {
   
   useEffect(() => {
     setValue(useCipher(input,move,cipher))
-  }, [input, move])
+  }, [input, move, cipher])
   
 
   return ( 

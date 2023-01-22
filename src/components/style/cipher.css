@@ -38,9 +38,7 @@
   font-size: .7em;
   text-transform:uppercase;
 }
-.input label, .resul{
-  padding-left: .5em;
-}
+
 .i1{
   grid-area:input1;
 
@@ -52,4 +50,5 @@
 
 .resul{
   grid-area: resul;
+  color: rgb(164, 255, 164);
 }

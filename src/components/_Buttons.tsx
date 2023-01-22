@@ -17,7 +17,7 @@ const Buttons = () => {
       <button
         className={!cipher ? "active" : ""}
         onClick={()=> toSetCipher?.(false) }
-      >Descidrar</button>
+      >Descifrar</button>
     </div>
   );
 }
