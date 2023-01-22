@@ -1,16 +1,16 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Buttons from "./_Buttons";
 import "./style/cipher.css"
-import Context from "../Context/Context";
 import useCipher from "../hook/useCipher";
+import {useStore} from "../store/store"
 
 const Cipher = () => {
 
-  const {input, toSetInput, move, toSetMove, cipher} = useContext(Context)
-
+  // const {input, toSetInput, move, toSetMove} = useContext(Context)
   const [value, setValue] = useState<string>("")
 
-  
+  const {cipher, input, toSetInput, move, toSetMove} = useStore()
+
   useEffect(() => {
     setValue(useCipher(input,move,cipher))
   }, [input, move, cipher])

@@ -1,12 +1,11 @@
-import { useContext } from "react";
+
 import "./style/buttons.css"
-import Context from "../Context/Context";
+import { useStore } from "../store/store";
 const Buttons = () => {
 
 
-  const { cipher, toSetCipher } = useContext(Context)
+  const { cipher, toSetCipher } = useStore()
 
-  
   console.log(toSetCipher)
   return (
     <div className="container-buttons">
