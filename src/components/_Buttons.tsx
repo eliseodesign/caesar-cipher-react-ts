@@ -6,7 +6,6 @@ const Buttons = () => {
 
   const { cipher, toSetCipher } = useStore()
 
-  console.log(toSetCipher)
   return (
     <div className="container-buttons">
       <button

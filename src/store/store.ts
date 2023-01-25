@@ -2,11 +2,11 @@ import create from "zustand"
 
 interface storeTypes {
   cipher:boolean;
-  toSetCipher?: (value:boolean) => void;
+  toSetCipher: (value:boolean) => void;
   input:string;
-  toSetInput?: (value:string) => void;
+  toSetInput: (value:string) => void;
   move:number;
-  toSetMove?:(value:number) => void
+  toSetMove:(value:number) => void
 
 }
 export const useStore = create<storeTypes>((set)=>({

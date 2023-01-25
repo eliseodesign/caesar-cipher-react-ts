@@ -1,47 +1,41 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, KeyboardEvent} from "react";
 import Buttons from "./_Buttons";
 import "./style/cipher.css"
 import useCipher from "../hook/useCipher";
 import {useStore} from "../store/store"
+import Input from "./_Input";
 
 const Cipher = () => {
-
-  // const {input, toSetInput, move, toSetMove} = useContext(Context)
   const [value, setValue] = useState<string>("")
-
   const {cipher, input, toSetInput, move, toSetMove} = useStore()
 
   useEffect(() => {
     setValue(useCipher(input,move,cipher))
   }, [input, move, cipher])
   
-  function changeMove(e:any){
-    
-    if((typeof Number(e.target.value)) === "number" ) toSetMove?.(Number(e.target.value))
+  function changeMove(e:React.ChangeEvent<HTMLInputElement>){
+    if((typeof Number(e.target.value)) === "number" ) toSetMove(Number(e.target.value))
   }
+
+  function changeInput(e:React.ChangeEvent<HTMLInputElement>){
+    toSetInput((e.target as HTMLInputElement).value)
+}
 
   return ( 
     <div className="cipher">
 
       <Buttons />
-
-      <div className="input i1">
-        <label>Ingrese Texto:</label>
-        <input 
-          onChange={(e)=> toSetInput?.(e.target.value)}
-          value={input}
-          type="text" /> 
-      </div>
-
-      <div className="input i2">
-        <label>Movimiento:</label>
-        <input 
-          min="1"
-          onChange={(e)=> changeMove(e)}
-          value={move}
-          type="number" /> 
-      </div>
-
+      <Input 
+        value={input} 
+        func={changeInput} 
+        message="Ingrese Texto" 
+        type={1}/>
+      <Input 
+        value={move} 
+        func={changeMove} 
+        message="Movimiento" 
+        type={2}/>
+      
       <p className="resul">{value}</p>
 
     </div> );
